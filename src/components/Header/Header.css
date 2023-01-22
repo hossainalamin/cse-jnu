@@ -1,0 +1,12 @@
+.nav-bar{
+    background-color: antiquewhite;
+    height: 80px;
+}
+.nav-bar a{
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+.nav-bar a:hover{
+    border-bottom: 5px solid blue;
+}
