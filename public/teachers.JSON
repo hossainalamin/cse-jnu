@@ -1,0 +1,34 @@
+[
+    {
+        "id" : "1",
+        "name" : "Dr.Mohammad Nasir Uddin",
+        "img" : "https://picsum.photos/200/200",
+        "designation" : "Professor"
+    },
+    {
+        "id" : "2",
+        "name" : "Dr.Ujjal Kumar Acharjee",
+        "img" : "https://picsum.photos/200/200",
+        "designation" : "Professor"
+    }, {
+        "id" : "3",
+        "name" : "Dr.Mohammad Abu Layek",
+        "img" : "https://picsum.photos/200/200",
+        "designation" : "Assot. Professor"
+    }, {
+        "id" : "4",
+        "name" : "Dr.Zulfikar Mahmud",
+        "img" : "https://picsum.photos/200/200",
+        "designation" : "Assistant Professor"
+    }, {
+        "id" : "5",
+        "name" : "Dr.Manowarul Islam",
+        "img" : "https://picsum.photos/200/200",
+        "designation" : "Assot. Professor"
+    }, {
+        "id" : "6",
+        "name" : "Dr. Ashraf Uddin",
+        "img" : "https://picsum.photos/200/200",
+        "designation" : "Assot. Professor"
+    }
+]

@@ -10,3 +10,6 @@
 .nav-bar a:hover{
     border-bottom: 5px solid blue;
 }
+.active{
+    border-bottom: 5px solid blue;
+}
