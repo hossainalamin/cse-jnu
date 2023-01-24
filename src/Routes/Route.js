@@ -5,6 +5,7 @@ import About from '../components/About/About';
 import Faculties from '../components/Faculties/Faculties';
 import Hero from '../components/Hero/Hero';
 import Course from '../components/Course/Course';
+import Faculty from '../components/Faculty/Faculty';
 const router = createBrowserRouter([
     {
       path : '/', element : <Main></Main>,
@@ -15,7 +16,13 @@ const router = createBrowserRouter([
         {
           path : '/faculties', 
           loader : ()=>fetch('../teachers.json'),
-          element : <Faculties></Faculties>},
+          element : <Faculties></Faculties>
+        },
+        {
+          path : 'faculties/faculty/:facId',
+          loader : ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.facId}`),
+          element : <Faculty></Faculty>
+        },
         {path : '/course', element : <Course></Course>}
       ]
     }
