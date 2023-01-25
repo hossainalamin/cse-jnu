@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div>
             <div className='bg-img'>
-                <img src="https://picsum.photos/1350/300"alt=''></img>
+                <img src="https://picsum.photos/1400/300"alt=''></img>
             </div>
             <nav className='nav-bar'>
                 <NavLink to="/" className = {({isActive}) => isActive ? 'active' : ''}>Home</NavLink>
