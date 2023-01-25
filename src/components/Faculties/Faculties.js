@@ -5,7 +5,6 @@ import Teacher from '../Teacher/Teacher';
 import { Col, Container, Row } from 'react-bootstrap';
 const Faculties = () => {
     const teachers = useLoaderData();
- 
     return (
         <div>
         <h2>Most Senior Faculty Members</h2>
