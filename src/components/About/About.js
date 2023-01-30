@@ -1,9 +1,9 @@
 import React from 'react';
-
+import Course from '../Course/Course';
 const About = () => {
     return (
         <div>
-            <h2>This is about</h2>
+            <Course></Course>
         </div>
     );
 };

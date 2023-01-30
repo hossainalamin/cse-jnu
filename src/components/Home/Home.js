@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
-
+import React, { createContext} from 'react';
+import About from '../About/About';
+export const UserContext = createContext();
 const Home = () => {
-    // const deptNameToShow = useContext({deptName})
     return (
-        <div>
-            {/* Department Name : {deptNameToShow} */}
-            <h2>This is home</h2>
-        </div>
+        <UserContext.Provider value="Rokib">
+            <About></About>
+        </UserContext.Provider>
     );
 };
 
