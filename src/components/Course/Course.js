@@ -10,4 +10,4 @@ const Course = () => {
     );
 };
 
-export default Course;<h2>This is course</h2>
+export default Course;
