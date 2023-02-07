@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -7,6 +7,7 @@ import app from '../../firebase/firebase.init';
 const auth = getAuth(app);
 const LoginForm = () => {
     const [loginSuccess, setLoginSuccess] = useState('');
+    const [userEmail, setUserEmail] = useState('');
     const submitLogin = (event)=>{
         event.preventDefault();
         const form = event.target;
@@ -18,17 +19,26 @@ const LoginForm = () => {
             setLoginSuccess('Login Successfull');
             console.log(loginSuccess);
         })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-        });
     }
+    const setUserEmailFunc = (event)=>{
+        
+        const mail = event.target.value;
+        setUserEmail(mail);
+    }
+    const resetPass = ()=>
+    {
+        sendPasswordResetEmail(auth, userEmail)
+        .then(() =>{
+            alert('Reset password Sent');
+        })
+    }
+    
     return (
         <div className='w-50 mx-auto'>
             <Form onSubmit={submitLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name="email" placeholder="Enter email" />
+                    <Form.Control type="email" name="email" onBlur={setUserEmailFunc} placeholder="Enter email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -41,6 +51,7 @@ const LoginForm = () => {
                 <Button variant="primary" type="submit">Login
                 </Button>
                 <p>Register here <Link to={'/'}>register</Link></p>
+                <p>Forget password <Button onClick={resetPass}>reset</Button></p>
             </Form>
         </div>
     );

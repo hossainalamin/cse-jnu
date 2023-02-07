@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth} from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, sendEmailVerification} from 'firebase/auth';
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -21,12 +21,19 @@ const RegistrationForm = () => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((user) => {
             setValidation('');
+            varifyEmail();
             setSuccess(true);
             form.reset();
         })
         .catch((error)=>{
             setValidation(error.message)
         })
+        const varifyEmail = () =>{
+            sendEmailVerification(auth.currentUser)
+            .then(() => {
+                setSuccess('Email Sent');
+            })
+        }
     }
     return (
         <div>
