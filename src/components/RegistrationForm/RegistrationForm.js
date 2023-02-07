@@ -2,9 +2,10 @@ import { createUserWithEmailAndPassword, getAuth} from 'firebase/auth';
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 import app from '../../firebase/firebase.init';
 const auth = getAuth(app);
-const LoginFrom = () => {
+const RegistrationForm = () => {
     const [validation, setValidation] = useState('');
     const [success, setSuccess] = useState(false);
     const getRegisterData = (event) =>{
@@ -44,13 +45,12 @@ const LoginFrom = () => {
                 </p>
                 {success && <p className='text-success'>User Created successfully</p>
                 }
-
-                <Button variant="primary" type="submit">
-                    Register
+                <Button variant="primary" type="submit">Register
                 </Button>
+                <p>Already have account login here <Link to={'/login'}>Login</Link></p>
             </Form>
         </div>
     );
 };
 
-export default LoginFrom;
+export default RegistrationForm;

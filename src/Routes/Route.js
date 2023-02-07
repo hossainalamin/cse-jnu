@@ -6,6 +6,7 @@ import Faculties from '../components/Faculties/Faculties';
 import Hero from '../components/Hero/Hero';
 import Course from '../components/Course/Course';
 import Faculty from '../components/Faculty/Faculty';
+import LoginForm from '../components/LoginForm/LoginForm';
 const router = createBrowserRouter([
     {
       path : '/', element : <Main></Main>,
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
         {path: '/', element : <Home></Home>},
         {path : '/about', element : <About></About>},
         {path : '/hero', element : <Hero></Hero>},
+        {path : '/login', element : <LoginForm></LoginForm>},
         {
           path : '/faculties', 
           loader : ()=>fetch('../teachers.json'),

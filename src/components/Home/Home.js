@@ -1,7 +1,7 @@
 import React, { createContext, useState} from 'react';
 import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import app from '../../firebase/firebase.init';
-import LoginFrom from '../LoginFrom/LoginFrom';
+import RegistrationForm from '../RegistrationForm/RegistrationForm';
 const auth = getAuth(app);
 export const UserContext = createContext();
 const Home = () => {
@@ -47,7 +47,7 @@ const Home = () => {
             <button onClick={handleGoogleSignOut}>Sign Out</button>
             :
             <div className = "mx-auto w-50">
-            <LoginFrom></LoginFrom>
+            <RegistrationForm></RegistrationForm>
             <br></br>
             <button onClick={handleGoogleSignIn}>Google Sign In</button>
             <button onClick={handleGitSignIn}>Github Sign In</button>
