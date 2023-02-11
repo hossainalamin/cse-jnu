@@ -1,28 +1,24 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import './Header.css';
 const Header = () => {
     return (
         <div>
-            <div className='bg-img'>
-                <img src="https://picsum.photos/1400/300"alt=''></img>
-            </div>
             <div className="navbar bg-neutral text-neutral-content">
-            <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <Link to="/">Home</Link>
+                <Link to="/login">Log In</Link>
+                <Link to="/register">Register</Link>
             </div>
-            <div className="navbar bg-base-300">
-            <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
-            </div>
-            <div className="navbar bg-primary text-primary-content">
-            <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
-            </div>
-            <nav className='nav-bar'>
-                <NavLink to="/" className = {({isActive}) => isActive ? 'active' : ''}>Home</NavLink>
-                <NavLink to="/about" className = {({isActive}) => isActive ? 'active' : ''}>About</NavLink>
-                <NavLink to="/course" className = {({isActive}) => isActive ? 'active' : ''}>Courses</NavLink>
-                <NavLink to="/faculties"className = {({isActive}) => isActive ? 'active' : ''}>Faculties</NavLink>
-                <NavLink to="/hero"className = {({isActive}) => isActive ? 'active' : ''}>Our Heros</NavLink>
-            </nav>
+            {/* <div className="navbar bg-primary text-primary-content">
+                <Link className="btn btn-ghost normal-case text-xl">CSE JNU</Link>
+                <Link to="/" className = {({isActive}) => isActive ? 'active' : ''}>Home</Link>
+                <Link to="/login" className = {({isActive}) => isActive ? 'active' : ''}>Login</Link>
+                <Link to="/register" className = {({isActive}) => isActive ? 'active' : ''}>Register</Link>
+                <Link to="/about" className = {({isActive}) => isActive ? 'active' : ''}>About</Link>
+                <Link to="/course" className = {({isActive}) => isActive ? 'active' : ''}>Courses</Link>
+                <Link to="/faculties"className = {({isActive}) => isActive ? 'active' : ''}>Faculties</Link>
+                <Link to="/hero"className = {({isActive}) => isActive ? 'active' : ''}>Our Heros</Link>
+            </div> */}
         </div>
     );
 };
